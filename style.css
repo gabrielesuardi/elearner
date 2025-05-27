@@ -1,111 +1,59 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Aggiunte e modifiche */
+.navigazione-strofe {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    align-items: center;
 }
 
-:root {
-    --primario: #2c3e50;
-    --secondario: #e74c3c;
-    --testo: #34495e;
-    --sfondo: #f9f9f9;
+.navigazione-strofe button {
+    padding: 0.6rem 1rem;
+    background: var(--primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: var(--testo);
-    background-color: var(--sfondo);
-    font-size: 1rem;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
+#strofaSelector {
+    padding: 0.6rem;
+    border: 2px solid var(--primario);
+    border-radius: 5px;
+    background: white;
     text-align: center;
-    margin-bottom: 2rem;
-}
-
-h1, h2, h3 {
-    font-family: 'Merriweather', serif;
-    color: var(--primario);
-}
-
-h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: var(--secondario);
-    margin-bottom: 2rem;
+    width: 120px;
 }
 
 .stanza {
-    background: white;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: none;
 }
 
-.testo-originale {
-    border-left: 4px solid var(--secondario);
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    color: #666;
+.stanza.attivo {
+    display: block;
 }
 
 .riassunto {
     display: none;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 5px;
-    margin-top: 1rem;
+    animation: fadeIn 0.3s ease;
 }
 
 .riassunto.attivo {
     display: block;
 }
 
-.livelli {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 2rem;
-}
-
-.livelli button {
-    flex: 1;
-    padding: 0.8rem;
-    border: none;
-    background: var(--primario);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.livelli button.attivo {
-    background: var(--secondario);
-    transform: scale(1.05);
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-    
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    .livelli {
+    .navigazione-strofe {
         flex-direction: column;
+    }
+    
+    .navigazione-strofe button,
+    #strofaSelector {
+        width: 100%;
     }
 }
