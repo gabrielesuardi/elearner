@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proemio Orlando Furioso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Orlando Furioso</h1>
+            <h2>Proemio Analizzato</h2>
+        </header>
 
+        <nav class="livelli">
+            <button onclick="mostraLivello('base')" class="attivo">Base</button>
+            <button onclick="mostraLivello('intermedio')">Intermedio</button>
+            <button onclick="mostraLivello('avanzato')">Avanzato</button>
+        </nav>
+
+        <section class="stanza">
+            <div class="testo-originale">
+                <h3>Strofa I</h3>
+                <p>Le donne, i cavallier, l'arme, gli amori,<br>
+                le cortesie, l'audaci imprese io canto,<br>
+                che furo al tempo che passaro i Mori<br>
+                d'Africa il mare, e in Francia nocquer tanto...</p>
+            </div>
+
+            <div id="base-1" class="riassunto attivo">
+                <h4>Spiegazione Base</h4>
+                <p>L'autore introduce gli argomenti principali del poema: amori, battaglie e gesta eroiche dei cavalieri, ambientati durante le guerre contro i Mori in Francia.</p>
+            </div>
+
+            <div id="intermedio-1" class="riassunto">
+                <h4>Spiegazione Intermedia</h4>
+                <p>Ariosto annuncia i temi cardine del poema cavalleresco, richiamando la tradizione epica ma introducendo elementi originali. Il riferimento storico alle invasioni moresche crea un ponte tra realtà e finzione.</p>
+            </div>
+
+            <div id="avanzato-1" class="riassunto">
+                <h4>Analisi Avanzata</h4>
+                <p>L'incipit ricalca topoi classici (epica omerica e virgiliana) ma con significative innovazioni: pluralità di temi, registro stilistico vario e prospettiva ironica. La menzione dei Mori storici (VIII sec.) contrasta con l'ambientazione carolingia (VIII-IX sec.), mostrando la libertà inventiva del poeta.</p>
+            </div>
+        </section>
+
+        <!-- Aggiungi altre strofe seguendo lo stesso schema -->
+
+    </div>
+
+    <script>
+        function mostraLivello(livello) {
+            document.querySelectorAll('.riassunto').forEach(el => el.classList.remove('attivo'));
+            document.querySelectorAll(`.${livello}`).forEach(el => el.classList.add('attivo'));
+            
+            document.querySelectorAll('.livelli button').forEach(btn => btn.classList.remove('attivo'));
+            event.target.classList.add('attivo');
+        }
+    </script>
+</body>
+</html>
