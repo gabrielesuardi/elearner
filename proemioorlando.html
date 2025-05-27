@@ -6,6 +6,145 @@
     <title>Proemio Orlando Furioso</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primario: #2c3e50;
+            --secondario: #e74c3c;
+            --testo: #34495e;
+            --sfondo: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--testo);
+            background-color: var(--sfondo);
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primario);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--secondario);
+            margin-bottom: 1rem;
+        }
+
+        .stanza {
+            background: white;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .testo-originale {
+            border-left: 3px solid var(--secondario);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .riassunto {
+            display: none;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .riassunto.attivo {
+            display: block;
+        }
+
+        .livelli {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .livelli button {
+            flex: 1;
+            min-width: 100px;
+            padding: 0.7rem 0.5rem;
+            border: none;
+            background: var(--primario);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .livelli button.attivo {
+            background: var(--secondario);
+        }
+
+        .riassunto-generale {
+            background: #fff;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .riassunto-generale h3 {
+            color: var(--secondario);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 700px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .livelli button {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -24,17 +163,17 @@
         <section class="riassunto-generale">
             <div class="riassunto base attivo">
                 <h3>Riassunto Base</h3>
-                <p>Il poema racconta le avventure dei paladini di Carlo Magno, in particolare la follia d'amore di Orlando per Angelica, ambientate durante la guerra contro i Mori invasori.</p>
+                <p>Il poema racconta le avventure dei paladini di Carlo Magno, in particolare la follia d'amore di Orlando per Angelica, durante la guerra contro i Mori.</p>
             </div>
 
             <div class="riassunto intermedio">
                 <h3>Riassunto Intermedio</h3>
-                <p>Opera che mescola epica cavalleresca e elementi fantastici, critica ironicamente i valori tradizionali attraverso la rappresentazione della passione amorosa che conduce alla follia.</p>
+                <p>Capolavoro rinascimentale che mescola epica cavalleresca e ironia, mostrando come l'amore possa portare alla follia anche i più saggi.</p>
             </div>
 
             <div class="riassunto avanzato">
                 <h3>Analisi Generale</h3>
-                <p>Capolavoro del Rinascimento italiano che rivisita la materia carolingia con sperimentalismo narrativo. Metateatro letterario che riflette sulla natura della scrittura epica attraverso continui slittamenti tra registri stilistici.</p>
+                <p>Opera metanarrativa che gioca con le convenzioni epiche. L'autore dedica l'opera a Ippolito d'Este e introduce il tema di Ruggiero, antenato degli Este.</p>
             </div>
         </section>
 
@@ -46,7 +185,7 @@
                 le cortesie, l'audaci imprese io canto,<br>
                 che furo al tempo che passaro i Mori<br>
                 d'Africa il mare, e in Francia nocquer tanto,<br>
-                seguendo l'ire e i giovanil furori<br>
+                seguendo l'ire e i giovenil furori<br>
                 d'Agramante lor re, che si diè vanto<br>
                 di vendicar la morte di Troiano<br>
                 sopra re Carlo imperator romano.</p>
@@ -54,17 +193,17 @@
 
             <div class="riassunto base attivo">
                 <h4>Spiegazione Base</h4>
-                <p>Presentazione degli argomenti del poema: amori, battaglie e gesta eroiche durante l'invasione dei Mori in Francia.</p>
+                <p>Introduzione ai temi del poema: amori e battaglie dei cavalieri durante l'invasione dei Mori in Francia guidati da re Agramante.</p>
             </div>
 
             <div class="riassunto intermedio">
                 <h4>Spiegazione Intermedia</h4>
-                <p>Proemio tradizionale ma innovativo: mescola elementi epici e cortesi. Il riferimento storico (guerre carolingie) si fonde con l'invenzione fantastica.</p>
+                <p>Proemio che unisce tradizione epica e innovazione. L'io narrativo si presenta mentre il riferimento storico si fonde con l'invenzione poetica.</p>
             </div>
 
             <div class="riassunto avanzato">
                 <h4>Analisi Avanzata</h4>
-                <p>Struttura anulare con richiami all'Iliade. L'io narrativo si appropria della materia epica tradizionale trasformandola. Il verso "io canto" stabilisce un patto narrativo ambiguo col lettore.</p>
+                <p>L'incipit richiama l'epica classica ("arma virumque cano") ma con pluralità di temi. La guerra è motivata da vendetta (morte di Troiano), tipico topos epico.</p>
             </div>
         </section>
 
@@ -73,7 +212,7 @@
             <div class="testo-originale">
                 <h3>Strofa II</h3>
                 <p>Dirò d'Orlando in un medesmo tratto<br>
-                cosa non detta in prosa mai né in rima:<br>
+                cosa non detta in prosa mai, né in rima:<br>
                 che per amor venne in furore e matto,<br>
                 d'uom che sì saggio era stimato prima;<br>
                 se da colei che tal quasi m'ha fatto,<br>
@@ -84,17 +223,17 @@
 
             <div class="riassunto base attivo">
                 <h4>Spiegazione Base</h4>
-                <p>Introduzione alla storia di Orlando che, nonostante sia saggio, impazzirà per amore.</p>
+                <p>Presentazione della storia di Orlando che, pur essendo saggio, impazzirà per amore. L'autore chiede ispirazione per completare l'opera.</p>
             </div>
 
             <div class="riassunto intermedio">
                 <h4>Spiegazione Intermedia</h4>
-                <p>Sperimentalismo narrativo: l'autore promette una storia innovativa. Autoriflessività sul processo creativo.</p>
+                <p>Rivendicazione di originalità ("cosa non detta"). L'autore mostra umiltà topica, ma il riferimento al proprio "poco ingegno" ha toni ironici.</p>
             </div>
 
             <div class="riassunto avanzato">
                 <h4>Analisi Avanzata</h4>
-                <p>Metaletteratura: il verso "cosa non detta" rivendica l'originalità. L'io poetico si mostra vulnerabile, creando complicità col lettore attraverso l'"ingegno che lima".</p>
+                <p>Metanarrazione: l'autore commenta il processo creativo. Il "furore" di Orlando anticipa il tema neoplatonico della follia amorosa come ispirazione poetica.</p>
             </div>
         </section>
 
@@ -102,29 +241,29 @@
         <section class="stanza">
             <div class="testo-originale">
                 <h3>Strofa III</h3>
-                <p>Principalmente io vi vo' ricordare<br>
-                (che cosa al conte Orlando intervenisse)<br>
-                che molti anni inamorato era stato<br>
-                di quella che al fin qui narrata v'ho:<br>
-                la qual, poi che a costui ebbe donato<br>
-                il corpo suo, come a Rinaldo dianzi,<br>
-                non però fatto gli avea più amore<br>
-                né men ch'ella solea fatto gli avea core.</p>
+                <p>Piacciavi, generosa Erculea prole,<br>
+                ornamento e splendor del secol nostro,<br>
+                Ippolito, aggradir questo che vuole<br>
+                e darvi sol può l'umil servo vostro.<br>
+                Quel ch'io vi debbo, posso di parole<br>
+                pagare in parte e d'opera d'inchiostro;<br>
+                né che poco io vi dia da imputar sono,<br>
+                che quanto io posso dar, tutto vi dono.</p>
             </div>
 
             <div class="riassunto base attivo">
                 <h4>Spiegazione Base</h4>
-                <p>Orlando è innamorato di Angelica, che però non ricambia il suo amore.</p>
+                <p>Dedica al cardinale Ippolito d'Este, mecenate di Ariosto, a cui l'autore offre la sua opera come dono.</p>
             </div>
 
             <div class="riassunto intermedio">
                 <h4>Spiegazione Intermedia</h4>
-                <p>Ambivalenza sentimentale: Angelica usa Orlando ma non lo ama. Critica all'amor cortese.</p>
+                <p>Topos della dedica nobilitante. L'umiltà formale ("umil servo") contrasta con la consapevolezza del valore dell'opera.</p>
             </div>
 
             <div class="riassunto avanzato">
                 <h4>Analisi Avanzata</h4>
-                <p>Doppio registro narrativo: la passione tragica di Orlando si contrappone alla leggerezza erotica degli altri personaggi. Intertestualità con il Canzoniere petrarchesco.</p>
+                <p>Strategia retorica della captatio benevolentiae. L'"Erculea prole" collega gli Este a Ercole, mitico fondatore di Ferrara, città di Ariosto.</p>
             </div>
         </section>
 
@@ -132,51 +271,58 @@
         <section class="stanza">
             <div class="testo-originale">
                 <h3>Strofa IV</h3>
-                <p>Non era per amor (ch'era non dico)<br>
-                ma per destino a tal termine sceso;<br>
-                e se non che la vergogna e 'l pudico<br>
-                rossor tenea da cotal fallo offeso,<br>
-                forse era per lasciarsi andare a vico<br>
-                più vile, e di sua gloria privo e reso:<br>
-                ma la ragion, contra l'appetito,<br>
-                sebben fievol, potea tanto al finito.</p>
+                <p>Voi sentirete fra i più degni eroi,<br>
+                che nominar con laude m'apparecchio,<br>
+                ricordar quel Ruggier, che fu di voi<br>
+                e de' vostri avi illustri il ceppo vecchio.<br>
+                L'alto valore e' chiari gesti suoi<br>
+                vi farò udir, se voi mi date orecchio,<br>
+                e vostri alti pensieri cedino un poco,<br>
+                sì che tra lor miei versi abbiano loco.</p>
             </div>
 
             <div class="riassunto base attivo">
                 <h4>Spiegazione Base</h4>
-                <p>Orlando cerca di resistere alla passione per non perdere il suo onore.</p>
+                <p>Introduzione del personaggio di Ruggiero, antenato degli Este, le cui gesta saranno narrate nel poema.</p>
             </div>
 
             <div class="riassunto intermedio">
                 <h4>Spiegazione Intermedia</h4>
-                <p>Conflitto interiore tra ragione e passione. La vergogna come freno sociale.</p>
+                <p>Funzione encomiastica: Ruggiero lega la famiglia Estense alla materia epica. Richiesta di attenzione al lettore con formula tradizionale.</p>
             </div>
 
             <div class="riassunto avanzato">
                 <h4>Analisi Avanzata</h4>
-                <p>Psicologia aristotelica: lotta tra parte razionale e appetitiva. La "ragion fievol" preannuncia il crollo psichico. Riferimenti alla filosofia stoica.</p>
+                <p>Fusione di storia e mito: Ruggiero è personaggio inventato che nobilita la casata Estense. La richiesta finale mostra consapevolezza della competizione con altri testi "alti".</p>
             </div>
         </section>
-
     </div>
 
     <script>
-        // Gestione livelli
-        document.querySelectorAll('.livelli button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const livello = btn.dataset.livello;
-                
-                // Aggiorna pulsanti
-                document.querySelectorAll('.livelli button').forEach(b => b.classList.remove('attivo'));
-                btn.classList.add('attivo');
-                
-                // Mostra contenuti corrispondenti
-                document.querySelectorAll('.riassunto').forEach(el => el.classList.remove('attivo'));
-                document.querySelectorAll(`.${livello}`).forEach(el => el.classList.add('attivo'));
-                
-                // Mostra riassunto generale corrispondente
-                document.querySelectorAll('.riassunto-generale .riassunto').forEach(el => el.classList.remove('attivo'));
-                document.querySelector(`.riassunto-generale .${livello}`).classList.add('attivo'));
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestione livelli
+            const buttons = document.querySelectorAll('.livelli button');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Rimuovi classe attiva da tutti i pulsanti
+                    buttons.forEach(b => b.classList.remove('attivo'));
+                    
+                    // Aggiungi classe attiva al pulsante cliccato
+                    this.classList.add('attivo');
+                    
+                    // Ottieni il livello selezionato
+                    const livello = this.dataset.livello;
+                    
+                    // Nascondi tutti i riassunti
+                    document.querySelectorAll('.riassunto').forEach(el => {
+                        el.classList.remove('attivo');
+                    });
+                    
+                    // Mostra i riassunti del livello selezionato
+                    document.querySelectorAll(`.${livello}`).forEach(el => {
+                        el.classList.add('attivo');
+                    });
+                });
             });
         });
     </script>
